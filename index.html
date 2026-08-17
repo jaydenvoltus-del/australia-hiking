@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>澳洲爬山_墨尔本悉尼布里斯班黄金海岸珀斯爬山_澳华登山社</title>
+    <meta name="description" content="澳洲爬山去哪里？澳华登山社是全澳洲华人爬山徒步约伴平台！墨尔本爬山、悉尼爬山、布里斯班爬山、黄金海岸爬山、珀斯爬山、阿德莱德爬山、堪培拉爬山、霍巴特爬山，新手友好、周末约伴、免费参与！">
+    <meta name="keywords" content="澳洲爬山,澳洲华人爬山,墨尔本爬山,悉尼爬山,布里斯班爬山,黄金海岸爬山,珀斯爬山,阿德莱德爬山,堪培拉爬山,霍巴特爬山,澳洲华人徒步,登山约伴,澳华登山社">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: "PingFang SC", "Microsoft YaHei", "Helvetica Neue", sans-serif; }
+        :root { --g1:#2F6B4F; --g2:#4A9F6F; --g3:#E8F3ED; --text:#2C3C33; --shadow:0 4px 15px rgba(47,107,79,.08); }
+        body { color: var(--text); background: linear-gradient(180deg, #f0f8f2 0%, #dceee4 100%); line-height: 1.8; }
+        header { background: linear-gradient(135deg, var(--g1), var(--g2)); color: white; padding: 60px 20px; text-align: center; }
+        header h1 { font-size: 2.4rem; margin-bottom: 10px; }
+        header p { font-size: 1.1rem; opacity: 0.95; max-width: 720px; margin: 0 auto; }
+        nav { background: white; box-shadow: 0 2px 10px rgba(0,0,0,.06); position: sticky; top: 0; z-index: 99; }
+        nav ul { list-style: none; display: flex; justify-content: center; flex-wrap: wrap; }
+        nav a { display: block; padding: 14px 20px; color: var(--g1); text-decoration: none; font-weight: 600; transition: all .3s; }
+        nav a:hover { background: var(--g3); color: var(--g2); }
+        section { max-width: 1050px; margin: 0 auto; padding: 45px 22px; }
+        h2 { color: var(--g1); font-size: 1.6rem; margin-bottom: 22px; padding-bottom: 10px; border-bottom: 3px solid var(--g3); }
+        .card { background: white; border-radius: 16px; padding: 28px; margin-bottom: 22px; box-shadow: var(--shadow); }
+        .city-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+        .city-card { background: white; border-radius: 14px; padding: 22px; box-shadow: var(--shadow); }
+        .city-card h3 { color: var(--g2); margin-bottom: 10px; }
+        .level { display: inline-block; padding: 3px 10px; border-radius: 20px; font-size: 0.85rem; margin: 3px; }
+        .easy { background: #D4F1DF; color: #207548; }
+        .mid { background: #F9EDC7; color: #926C00; }
+        .hard { background: #F9D5D5; color: #A82C2C; }
+        .contact-btn { display: block; max-width: 320px; margin: 30px auto; text-align: center; background: linear-gradient(135deg, var(--g1), var(--g2)); color: white !important; padding: 16px 32px; border-radius: 50px; font-size: 1.1rem; font-weight: bold; text-decoration: none; box-shadow: 0 6px 20px rgba(47,107,79,.25); transition: all .3s; cursor: pointer; border: none; }
+        .contact-btn:hover { transform: translateY(-3px); }
+        footer { text-align: center; padding: 30px 20px; color: #5B7466; font-size: 0.95rem; }
+        .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,.5); z-index: 999; justify-content: center; align-items: center; }
+        .modal-box { background: white; border-radius: 16px; padding: 30px; max-width: 480px; width: 90%; box-shadow: 0 10px 40px rgba(0,0,0,.2); }
+        .modal-box h3 { color: var(--g1); margin-bottom: 20px; text-align: center; }
+        .form-group { margin-bottom: 16px; }
+        .form-group label { display: block; margin-bottom: 6px; font-weight: 600; }
+        .form-group input, .form-group textarea { width: 100%; padding: 12px; border: 2px solid var(--g3); border-radius: 8px; font-size: 1rem; }
+        .form-group input:focus, .form-group textarea:focus { border-color: var(--g2); outline: none; }
+        .form-group textarea { height: 110px; resize: vertical; }
+        .form-buttons { display: flex; gap: 12px; margin-top: 20px; }
+        .btn-close { flex: 1; padding: 12px; border: none; border-radius: 8px; background: #eee; font-size: 1rem; cursor: pointer; }
+        .btn-submit { flex: 2; padding: 12px; border: none; border-radius: 8px; background: linear-gradient(135deg, var(--g1), var(--g2)); color: white; font-size: 1rem; font-weight: bold; cursor: pointer; }
+        .success-msg { display: none; text-align: center; padding: 30px 10px; color: var(--g1); font-size: 1.1rem; }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>🏔️ 澳华登山社 — 澳洲华人爬山平台</h1>
+    <p>澳洲爬山约伴 · 墨尔本爬山 · 悉尼爬山 · 布里斯班爬山 · 黄金海岸爬山 · 珀斯爬山 · 阿德莱德爬山 · 堪培拉爬山 · 霍巴特爬山</p>
+</header>
+
+<nav>
+    <ul>
+        <li><a href="#about">关于我们</a></li>
+        <li><a href="#cities">各城市爬山路线</a></li>
+        <li><a href="#plan">活动安排</a></li>
+        <li><a href="#contact">联系我们</a></li>
+        <li><a href="#safe">安全须知</a></li>
+    </ul>
+</nav>
+
+<section id="about" class="card">
+    <h2>🌿 关于澳华登山社 — 澳洲华人爬山社群</h2>
+    <p><strong>澳华登山社</strong>是面向全澳洲华人的爬山徒步约伴平台。无论你在墨尔本、悉尼、布里斯班、黄金海岸、珀斯、阿德莱德、堪培拉还是塔斯马尼亚，只要喜欢澳洲爬山、热爱大自然、想锻炼身体同时结识同乡朋友，欢迎加入！</p>
+    <br>
+    <p>✅ 新手友好 · 难度可选 · 周末出发 · 免费约伴 · 安全第一 · 纯公益社群</p>
+    <p>🏃 走出家门、拥抱山水、以山会友、一起探索澳洲最美自然风光！</p>
+</section>
+
+<section id="cities">
+    <h2>🗺️ 全澳各城市爬山路线推荐</h2>
+    <div class="city-grid">
+        <div class="city-card">
+            <h3>🇦🇺 墨尔本爬山</h3>
+            <p>丹顿农山脉、Wilson岬、大洋路徒步、Lake Mountain、Baw Baw山</p>
+            <span class="level easy">入门</span><span class="level mid">中等</span>
+        </div>
+        <div class="city-card">
+            <h3>🇦🇺 悉尼爬山</h3>
+            <p>蓝山、Echo Point、Royal National Park、Bondi-Coogee海岸步道</p>
+            <span class="level easy">入门</span><span class="level hard">挑战</span>
+        </div>
+        <div class="city-card">
+            <h3>🏝️ 布里斯班爬山</h3>
+            <p>Glass House Mountains、Coot-tha山、Lamington国家公园</p>
+            <span class="level easy">入门</span><span class="level mid">中等</span>
+        </div>
+        <div class="city-card">
+            <h3>☀️ 黄金海岸爬山</h3>
+            <p>Springbrook国家公园、Tamborine山、Cave Creek瀑布线</p>
+            <span class="level easy">入门</span><span class="level mid">中等</span>
+        </div>
+        <div class="city-card">
+            <h3>🌊 珀斯爬山</h3>
+            <p>King's Park、John Forrest国家公园、Cape-to-Cape步道</p>
+            <span class="level easy">入门</span><span class="level hard">挑战</span>
+        </div>
+        <div class="city-card">
+            <h3>🍂 阿德莱德爬山</h3>
+            <p>Lofty山、Belair国家公园、Barossa山谷步道</p>
+            <span class="level easy">入门</span><span class="level mid">中等</span>
+        </div>
+        <div class="city-card">
+            <h3>🏛️ 堪培拉爬山</h3>
+            <p>Black Mountain、Red Hill、Tidbinbilla自然保护区</p>
+            <span class="level easy">入门</span>
+        </div>
+        <div class="city-card">
+            <h3>❄️ 霍巴特爬山</h3>
+            <p>威灵顿山、Tasman半岛、Overland Track长线徒步</p>
+            <span class="level mid">中等</span><span class="level hard">挑战</span>
+        </div>
+    </div>
+</section>
+
+<section id="plan" class="card">
+    <h2>📅 澳洲爬山 · 近期活动安排</h2>
+    <p>✅ 每周六/周日 — 各城市同步约伴爬山</p>
+    <p>✅ 短途单日爬山 — 周末半天/一天，新手轻松入门</p>
+    <p>✅ 节假日长线爬山 — 跨城多日徒步，提前规划</p>
+    <p style="margin-top:12px; color:#666;">👉 具体每周爬山路线、集合时间地点、难度，<strong>联系我们入群后通知</strong>！</p>
+</section>
+
+<section id="contact">
+    <h2>💬 联系我们 — 加入澳洲爬山社群</h2>
+    <div class="card" style="text-align:center;">
+        <p style="font-size:1.05rem; margin-bottom:10px;">想加入澳洲爬山约伴？有问题或建议？想了解所在城市爬山路线？</p>
+        <p style="color:#666; margin-bottom:25px;">👇 点击下方按钮发消息，客服看到后会尽快回复您！</p>
+        <button class="contact-btn" onclick="openModal()">✉️ 点击发消息联系我们</button>
+    </div>
+</section>
+
+<section id="safe" class="card">
+    <h2>⚠️ 爬山装备建议 & 安全须知</h2>
+    <p><strong>必带：</strong>防滑登山鞋、充足饮用水、防晒帽、雨具、少量零食、手机充电宝</p>
+    <p><strong>建议：</strong>速干衣裤、双肩包、防晒霜、驱蚊液、常用药品、登山杖</p>
+    <p><strong>安全原则：</strong>量力而行、结伴而行、不擅自离队、不走野路、天气恶劣及时下撤</p>
+    <p style="margin-top:12px; color:#A82C2C;">⚠️ 本社群为纯公益约伴平台，活动AA制，参与者自行负责人身与财物安全。</p>
+</section>
+
+<footer>
+    <p>🏔️ 澳华登山社 — 全澳华人爬山徒步交流平台 | 以山会友 · 安全第一</p>
+    <p>覆盖：墨尔本爬山 · 悉尼爬山 · 布里斯班爬山 · 黄金海岸爬山 · 珀斯爬山 · 阿德莱德爬山 · 堪培拉爬山 · 霍巴特爬山</p>
+</footer>
+
+<div class="modal-overlay" id="contactModal">
+    <div class="modal-box">
+        <h3>✉️ 联系客服 — 加入澳洲爬山社群</h3>
+        <form id="contactForm" action="https://formspree.io/f/xoeakpyn" method="POST">
+            <div class="form-group">
+                <label>您怎么称呼？</label>
+                <input type="text" name="称呼" placeholder="例如：墨尔本-小王" required>
+            </div>
+            <div class="form-group">
+                <label>您的联系方式（邮箱/微信号）</label>
+                <input type="text" name="回复方式" placeholder="方便客服回复您" required>
+            </div>
+            <div class="form-group">
+                <label>所在城市</label>
+                <input type="text" name="所在城市" placeholder="墨尔本 / 悉尼 / 布里斯班…">
+            </div>
+            <div class="form-group">
+                <label>留言内容</label>
+                <textarea name="留言" placeholder="请告诉我您想了解的爬山路线、加入方式、活动时间…" required></textarea>
+            </div>
+            <div class="form-buttons">
+                <button type="button" class="btn-close" onclick="closeModal()">取消</button>
+                <button type="submit" class="btn-submit">发送消息</button>
+            </div>
+        </form>
+        <div class="success-msg" id="successMsg">
+            ✅ 消息发送成功！客服看到后会尽快回复您！
+        </div>
+    </div>
+</div>
+
+<script>
+    function openModal() { document.getElementById('contactModal').style.display='flex'; document.body.style.overflow='hidden'; }
+    function closeModal() { document.getElementById('contactModal').style.display='none'; document.body.style.overflow='auto'; }
+    document.getElementById('contactModal').addEventListener('click',e=>{if(e.target===this) closeModal();});
+    document.getElementById('contactForm').addEventListener('submit',function(e){
+        setTimeout(()=>{
+            this.style.display='none';
+            document.getElementById('successMsg').style.display='block';
+            setTimeout(()=>{
+                closeModal();
+                this.style.display='block';
+                document.getElementById('successMsg').style.display='none';
+                this.reset();
+            },3500);
+        },600);
+    });
+</script>
+
+</body>
+</html>
